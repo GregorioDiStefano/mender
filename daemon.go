@@ -15,7 +15,7 @@ package main
 
 import (
 	"time"
-
+    "fmt"
 	"github.com/mendersoftware/log"
 )
 
@@ -79,7 +79,8 @@ func (daemon *menderDaemon) Run() error {
 		case <-ticker.C:
 			var update UpdateResponse
 			log.Debug("Timer expired. Polling server to check update.")
-
+            
+            fmt.Println("ServerURL : ", daemon.config.serverURL)
 			if updateID, haveUpdate :=
 				checkScheduledUpdate(daemon, processUpdateResponse, &update,
 					daemon.config.serverURL, daemon.config.deviceID); haveUpdate {

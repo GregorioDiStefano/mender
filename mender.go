@@ -123,7 +123,7 @@ func (m *mender) updateState() error {
 type menderFileConfig struct {
 	PollIntervalSeconds int
 	DeviceID            string
-	ServerURL           string
+    ServerURL           string
 	ServerCertificate   string
 	ClientProtocol      string
 
@@ -157,6 +157,7 @@ func (m mender) GetUpdaterConfig() httpsClientConfig {
 }
 
 func (m mender) GetDaemonConfig() daemonConfig {
+    log.Debug("m.config.ServerURL: "+ m.config.ServerURL)
 	return daemonConfig{
 		time.Duration(m.config.PollIntervalSeconds) * time.Second,
 		m.config.ServerURL,

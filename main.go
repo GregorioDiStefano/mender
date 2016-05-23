@@ -43,9 +43,9 @@ type runOptionsType struct {
 }
 
 var (
-	errMsgNoArgumentsGiven = errors.New("Must give one of -rootfs, " +
+	errMsgNoArgumentsGiven = errors.New("TestMust give one of -rootfs, " +
 		"-commit, -bootstrap or -daemon arguments")
-	errMsgAmbiguousArgumentsGiven = errors.New("Ambiguous parameters given " +
+	errMsgAmbiguousArgumentsGiven = errors.New("TestAmbiguous parameters given " +
 		"- must give exactly one from: -rootfs, -commit, -bootstrap or -daemon")
 	errMsgIncompatibleLogOptions = errors.New("One or more " +
 		"incompatible log log options specified.")
